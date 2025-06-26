@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNU2 - La Primera Nación Blockchain Solar</title>
+    <meta name="description" content="SUNU2 - La primera nación blockchain gracias a la generosidad del sol. Únete a la revolución energética.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            letter-spacing: 3px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding-top: 100px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="sun" cx="50%" cy="30%"><stop offset="0%" stop-color="%23FFD700" stop-opacity="0.3"/><stop offset="100%" stop-color="%23FFD700" stop-opacity="0"/></radialGradient></defs><circle cx="500" cy="300" r="200" fill="url(%23sun)"/></svg>') no-repeat center top;
+            background-size: 100% 100%;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .hero-logo {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FF6B35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: 5px;
+            text-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5)); }
+            to { filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.8)); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #00D4FF, #00A8FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .book-offer {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.2));
+            border: 2px solid #FFD700;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .book-title {
+            font-size: 1.5rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .book-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF6B35, #F7931E);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .book-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Forms Section */
+        .forms-section {
+            padding: 5rem 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .forms-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .form-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .form-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .form-title {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #FFD700;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 1rem 0;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            transform: scale(1.2);
+        }
+
+        .conditional-field {
+            display: none;
+            margin-top: 1rem;
+            padding-left: 20px;
+            border-left: 3px solid #FFD700;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #00D4FF, #00A8FF);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .success-message {
+            display: none;
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-logo {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .forms-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .book-offer {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        /* Solar Animation */
+        .solar-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: float 6s infinite linear;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated particles -->
+    <div class="solar-particles" id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">SUNU2</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-logo">SUNU2</div>
+            <div class="hero-subtitle">LA 1ª NACIÓN BLOCKCHAIN GRACIAS A LA GENEROSIDAD DEL SOL</div>
+            
+            <div class="book-offer">
+                <h3>¡Rellena un formulario y recibe de regalo este libro valorado en €9!</h3>
+                <div class="book-title">"ExtraBall Juega gratis la próxima partida"</div>
+                <a href="https://www.amazon.es/EXTRABALL-gratis-pr%C3%B3xima-partida-D3cada/dp/B0DPKWR4WK/ref=tmm_pap_swatch_0?_encoding=UTF8&sr=8-1" 
+                   target="_blank" class="book-link">
+                    <i class="fab fa-amazon"></i> Ver en Amazon (€9)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section class="forms-section">
+        <div class="container">
+            <div class="forms-container">
+                <!-- Formulario Camino 1 -->
+                <div class="form-card">
+                    <h3 class="form-title">
+                        <i class="fas fa-solar-panel"></i><br>
+                        ¿Tienes tejado solar o eres una Comunidad Energética y quieres ganar dinero además de ahorrar?
+                    </h3>
+                    <form id="form1">
+                        <div class="form-group">
+                            <label for="nombre1">Nombre *</label>
+                            <input type="text" id="nombre1" name="nombre" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido1">Apellido *</label>
+                            <input type="text" id="apellido1" name="apellido" required placeholder="Tu apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="email1">Email para contactar *</label>
+                            <input type="email" id="email1" name="email" required placeholder="tu@email.com">
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter1" name="newsletter">
+                            <label for="newsletter1">Suscríbete a la newsletter</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="kwh1">kWh de generación que tienes instalados *</label>
+                            <input type="number" id="kwh1" name="kwh" required placeholder="Ej: 5.5" step="0.1">
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="ampliar1" name="ampliar" onchange="toggleAmpliarField(this, 'ampliar-field1')">
+                            <label for="ampliar1">¿Quieres ampliar tu instalación?</label>
+                        </div>
+                        <div class="conditional-field" id="ampliar-field1">
+                            <div class="form-group">
+                                <label for="ampliar-cuanto1">¿Cuánto quieres aumentar? (kWh)</label>
+                                <input type="number" id="ampliar-cuanto1" name="ampliar_cuanto" placeholder="Ej: 3.0" step="0.1">
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-sun"></i> Únete como Generador Solar
+                        </button>
+                        <div class="success-message" id="success1">
+                            ¡Gracias! Te hemos registrado como generador solar. Pronto recibirás tu libro gratuito.
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Formulario Camino 2 -->
+                <div class="form-card">
+                    <h3 class="form-title">
+                        <i class="fas fa-heart"></i><br>
+                        ¿No tienes tejado solar, pero quieres apadrinar tejados solares?
+                    </h3>
+                    <form id="form2">
+                        <div class="form-group">
+                            <label for="nombre2">Nombre *</label>
+                            <input type="text" id="nombre2" name="nombre" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido2">Apellido *</label>
+                            <input type="text" id="apellido2" name="apellido" required placeholder="Tu apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="email2">Email para contactar *</label>
+                            <input type="email" id="email2" name="email" required placeholder="tu@email.com">
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter2" name="newsletter">
+                            <label for="newsletter2">Suscríbete a la newsletter</label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-satellite"></i> Únete como Satélite
+                        </button>
+                        <div class="success-message" id="success2">
+                            ¡Gracias! Te hemos registrado como satélite. Pronto recibirás tu libro gratuito.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SUNU2 - La Primera Nación Blockchain Solar</p>
+            <p>Texto legal pendiente</p>
+        </div>
+    </footer>
+
+    <script>
+        // Crear partículas animadas
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 20;
+
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Toggle campo condicional
+        function toggleAmpliarField(checkbox, fieldId) {
+            const field = document.getElementById(fieldId);
+            if (checkbox.checked) {
+                field.style.display = 'block';
+            } else {
+                field.style.display = 'none';
+            }
+        }
+
+        // Simulación de base de datos (en producción usar Firebase o Google Sheets)
+        let solesDB = []; // Para formulario 1 - "Soles campaña julio 2025"
+        let satelitesDB = []; // Para formulario 2 - "Satélites campaña julio 2025"
+
+        // Manejar envío del formulario 1
+        document.getElementById('form1').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {
+                nombre: formData.get('nombre'),
+                apellido: formData.get('apellido'),
+                email: formData.get('email'),
+                newsletter: formData.get('newsletter') ? 'Sí' : 'No',
+                kwh: formData.get('kwh'),
+                ampliar: formData.get('ampliar') ? 'Sí' : 'No',
+                ampliar_cuanto: formData.get('ampliar_cuanto') || 'N/A',
+                fecha: new Date().toISOString()
+            };
+
+            // Guardar en "base de datos" simulada
+            solesDB.push(data);
+            console.log('Datos guardados en Soles campaña julio 2025:', data);
+            console.log('Base de datos Soles:', solesDB);
+
+            // Mostrar mensaje de éxito
+            document.getElementById('success1').style.display = 'block';
+            this.style.display = 'none';
+        });
+
+        // Manejar envío del formulario 2
+        document.getElementById('form2').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {
+                nombre: formData.get('nombre'),
+                apellido: formData.get('apellido'),
+                email: formData.get('email'),
+                newsletter: formData.get('newsletter') ? 'Sí' : 'No',
+                fecha: new Date().toISOString()
+            };
+
+            // Guardar en "base de datos" simulada
+            satelitesDB.push(data);
+            console.log('Datos guardados en Satélites campaña julio 2025:', data);
+            console.log('Base de datos Satélites:', satelitesDB);
+
+            // Mostrar mensaje de éxito
+            document.getElementById('success2').style.display = 'block';
+            this.style.display = 'none';
+        });
+
+        // Inicializar partículas cuando se carga la página
+        window.addEventListener('load', createParticles);
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
